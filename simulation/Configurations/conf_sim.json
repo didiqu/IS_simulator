@@ -33,11 +33,11 @@
                     },
                     {"hostname":"hacker","users": [
                                                         {"name":"hacker","scenarios":[
-                                                                                        {"name":"chat_web_application_signup","rep":"0","begin":"0","args":{"url":"http://10.122.0.21/","username":"test", "email":"test@test.com", "password":"test123","proxy":""}},
-                                                                                        {"name":"chat_web_application_signup","rep":"0","begin":"0","args":{"url":"http://10.122.0.21/","username":"test2", "email":"test2@test.com", "password":"test123","proxy":""}},
-                                                                                        {"name":"chat_web_application","rep":"2","begin":"0","args":{"nb_actions":"10","url":"http://10.122.0.21/","username":"test", "receivers":["test2"], "password":"test123","proxy":""}},
-                                                                                        {"name":"dvwa","rep":"3","begin":"0","args":{"nb_actions":"3","url":"http://10.122.1.15/", "proxy":""}},
-                                                                                        {"name":"dvwa_attack","rep":"0","begin":"75","args":{"url":"http://10.122.1.15/"}}                                                                                       
+                                                                                        {"name":"chat_web_application_signup","rep":"0","begin":"0","args":{"url":"http://10.122.0.21/","username":"user", "email":"user@test.com", "password":"user123","proxy":""}},
+                                                                                        {"name":"chat_web_application_signup","rep":"0","begin":"0","args":{"url":"http://10.122.0.21/","username":"user2", "email":"user2@test.com", "password":"user123","proxy":""}},
+                                                                                        {"name":"chat_web_application","rep":"2","begin":"1","args":{"nb_actions":"10","url":"http://10.122.0.21/","username":"user", "receivers":["user2"], "password":"user123","proxy":""}},
+                                                                                        {"name":"dvwa","rep":"3","begin":"2","args":{"nb_actions":"3","url":"http://10.122.1.15/", "proxy":""}},
+                                                                                        {"name":"dvwa_attack","rep":"0","begin":"2","args":{"url":"http://10.122.1.15/"}}                                                                                       
                                                                                     ]
                                                         }
                                                         ]

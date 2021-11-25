@@ -1,78 +1,102 @@
 {
     "networks": [
-        {"name": "internetPasnet", "subnet": "10.122.0.1/24", "driver":"bridge"}, 
-        {"name": "silicomNetwork", "subnet": "10.122.1.1/24", "driver":"bridge"}
+        {"name": "internetPasnet", "subnet": "10.122.0.254/24", "driver":"bridge"}, 
+        {"name": "silicomNetwork", "subnet": "10.122.1.254/24", "driver":"bridge"}
     ],
 
     "workstations": [
-        {"hostname":"router", "os/image":"debian", "networks": [
+        {"hostname":"router", "distribution":"ubuntu", "release":"bionic", "networks": [
             {"name": "silicomNetwork", "interface":"eth1", "ip_v4": "10.122.1.1", "subnet": "24"},
             {"name": "internetPasnet", "interface":"eth2", "ip_v4": "10.122.0.1", "subnet": "24"},
             {"name": "lxdbr0", "interface":"eth3", "ip_v4": "default_ip_on_lxdbr0", "subnet": "24"}
             ]
-        ,"gateway":"default_gateway_on_lxdbr0"},
+        ,"gateway":"default_gateway_on_lxdbr0", "camera":"false"},
 
 
-        {"hostname":"dns", "os/image":"ubuntu:18.04",   "networks": [
+        {"hostname":"dns", "distribution":"ubuntu", "release":"bionic", "networks": [
             {"name": "internetPasnet", "interface":"eth1", "ip_v4": "10.122.0.14", "subnet": "24"}
             ]
-        ,"gateway":"10.122.0.1"},
+        ,"gateway":"10.122.0.1", "camera":"false"},
 
-        {"hostname":"chat", "os/image":"ubuntu:18.04",   "networks": [
+        {"hostname":"chat", "distribution":"ubuntu", "release":"bionic", "networks": [
             {"name": "internetPasnet", "interface":"eth1", "ip_v4": "10.122.0.21", "subnet": "24"}
             ]
-        ,"gateway":"10.122.0.1"},
+        ,"gateway":"10.122.0.1", "camera":"false"},
 
-        {"hostname":"hacker", "os/image":"ubuntu:18.04",   "networks": [
+        {"hostname":"social", "distribution":"ubuntu", "release":"bionic", "networks": [
+            {"name": "internetPasnet", "interface":"eth1", "ip_v4": "10.122.0.22", "subnet": "24"}
+            ]
+        ,"gateway":"10.122.0.1", "camera":"false"},
+
+        {"hostname":"hacker", "distribution":"ubuntu", "release":"bionic", "networks": [
             {"name": "internetPasnet", "interface":"eth1", "ip_v4": "10.122.0.40", "subnet": "24"}
             ]
-        ,"gateway":"10.122.0.1"},
+        ,"gateway":"10.122.0.1", "camera":"false"},
 
-
-        {"hostname":"ldap", "os/image":"ubuntu:18.04",   "networks": [
+        {"hostname":"ldap", "distribution":"ubuntu", "release":"bionic", "networks": [
             {"name": "silicomNetwork", "interface":"eth1", "ip_v4": "10.122.1.10", "subnet": "24"}
             ]
-        ,"gateway":"10.122.1.1"},
+        ,"gateway":"10.122.1.1", "camera":"false"},
 
-        {"hostname":"mail", "os/image":"ubuntu:18.04",   "networks": [
+        {"hostname":"mail", "distribution":"ubuntu", "release":"bionic", "networks": [
             {"name": "silicomNetwork", "interface":"eth1", "ip_v4": "10.122.1.12", "subnet": "24"}
             ]
-        ,"gateway":"10.122.1.1"},
+        ,"gateway":"10.122.1.1", "camera":"false"},
 
-        {"hostname":"samba", "os/image":"ubuntu:18.04",   "networks": [
+        {"hostname":"samba", "distribution":"ubuntu", "release":"bionic", "networks": [
             {"name": "silicomNetwork", "interface":"eth1", "ip_v4": "10.122.1.17", "subnet": "24"}
             ]
-        ,"gateway":"10.122.1.1"},
+        ,"gateway":"10.122.1.1", "camera":"false"},
 
-        {"hostname":"dvwa", "os/image":"ubuntu:18.04",   "networks": [
+        {"hostname":"dvwa", "distribution":"ubuntu", "release":"bionic", "networks": [
             {"name": "silicomNetwork", "interface":"eth1", "ip_v4": "10.122.1.15", "subnet": "24"}
             ]
-        ,"gateway":"10.122.1.1"},
+        ,"gateway":"10.122.1.1", "camera":"false"},
 
-        {"hostname":"elk", "os/image":"ubuntu:18.04",   "networks": [
+        {"hostname":"camera", "distribution":"ubuntu", "release":"jammy", "networks": [
+            {"name": "silicomNetwork", "interface":"eth1", "ip_v4": "10.122.1.30", "subnet": "24"}
+            ]
+        ,"gateway":"10.122.1.1", "camera":"true"},
+
+        {"hostname":"camera2", "distribution":"ubuntu", "release":"jammy", "networks": [
+            {"name": "silicomNetwork", "interface":"eth1", "ip_v4": "10.122.1.31", "subnet": "24"}
+            ]
+        ,"gateway":"10.122.1.1", "camera":"true"},
+
+        {"hostname":"camera3", "distribution":"ubuntu", "release":"jammy", "networks": [
+            {"name": "silicomNetwork", "interface":"eth1", "ip_v4": "10.122.1.32", "subnet": "24"}
+            ]
+        ,"gateway":"10.122.1.1", "camera":"true"},
+
+        {"hostname":"elk", "distribution":"ubuntu", "release":"bionic", "networks": [
             {"name": "silicomNetwork", "interface":"eth1", "ip_v4": "10.122.1.11", "subnet": "24"}
             ]
-        ,"gateway":"10.122.1.1"},
+        ,"gateway":"10.122.1.1", "camera":"false"},
 
-        {"hostname":"workstation1", "os/image":"ubuntu:18.04",   "networks": [
+        {"hostname":"videoCenter", "distribution":"ubuntu", "release":"jammy", "networks": [
+            {"name": "silicomNetwork", "interface":"eth1", "ip_v4": "10.122.1.19", "subnet": "24"}
+            ]
+        ,"gateway":"10.122.1.1", "camera":"false"},
+
+        {"hostname":"workstation1", "distribution":"ubuntu", "release":"bionic", "networks": [
             {"name": "silicomNetwork", "interface":"eth1", "ip_v4": "10.122.1.40", "subnet": "24"}
             ]
-        ,"gateway":"10.122.1.1"},
+        ,"gateway":"10.122.1.1", "camera":"false"},
 
-        {"hostname":"workstation2", "os/image":"ubuntu:18.04",   "networks": [
+        {"hostname":"workstation2", "distribution":"ubuntu", "release":"bionic", "networks": [
             {"name": "silicomNetwork", "interface":"eth1", "ip_v4": "10.122.1.41", "subnet": "24"}
             ]
-        ,"gateway":"10.122.1.1"},
+        ,"gateway":"10.122.1.1", "camera":"false"},
 
-        {"hostname":"workstation3", "os/image":"ubuntu:18.04",   "networks": [
+        {"hostname":"workstation3", "distribution":"ubuntu", "release":"bionic", "networks": [
             {"name": "silicomNetwork", "interface":"eth1", "ip_v4": "10.122.1.42", "subnet": "24"}
             ]
-        ,"gateway":"10.122.1.1"},
+        ,"gateway":"10.122.1.1", "camera":"false"},
 
-        {"hostname":"workstation4", "os/image":"ubuntu:18.04",   "networks": [
+        {"hostname":"workstation4", "distribution":"ubuntu", "release":"bionic", "networks": [
             {"name": "silicomNetwork", "interface":"eth1", "ip_v4": "10.122.1.43", "subnet": "24"}
             ]
-        ,"gateway":"10.122.1.1"}
+        ,"gateway":"10.122.1.1", "camera":"false"}
 
     ]
 }
